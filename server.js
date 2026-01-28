@@ -105,6 +105,7 @@ app.post("/api/track-order", async (req, res) => {
     // ───────── FINAL RESPONSE ─────────
     return res.json({
       orderId: order.id,
+      orderCust: order.customer.firstName,
       orderName: order.name,
       financialStatus: order.financial_status,
       fulfillmentStatus: order.fulfillment_status,
@@ -138,4 +139,5 @@ const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
   console.log(`🚀 Order Tracking API running on port ${PORT}`);
+
 });
