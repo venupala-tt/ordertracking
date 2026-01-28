@@ -13,6 +13,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
+app.get("/", (req, res) => {
+  res.send(`
+    <h1>TRKORD – Shopify Order Tracking</h1>
+    <p>App is running successfully 🚀</p>
+    <p>You can now manage tracking and shipments.</p>
+  `);
+});
+
 // ─────────────────────────────────────
 // Health check
 // ─────────────────────────────────────
@@ -142,6 +151,7 @@ app.listen(PORT, () => {
   console.log(`🚀 Order Tracking API running on port ${PORT}`);
 
 });
+
 
 
 
