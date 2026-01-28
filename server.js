@@ -120,11 +120,7 @@ app.post("/api/track-order", async (req, res) => {
         (fulfillment
           ? fulfillment.shipment_status || "Shipped"
           : "Order Placed"),
-
-      trackingNumber:
-        customTrackingNumber ||
-        (fulfillment
-          ? fulfillment.tracking_number),
+      trackingNumber:customTrackingNumber,
    //   trackingNumber: fulfillment?.tracking_number || null,
       trackingUrl: fulfillment?.tracking_url || null,
     });
@@ -152,6 +148,7 @@ app.listen(PORT, () => {
   console.log(`🚀 Order Tracking API running on port ${PORT}`);
 
 });
+
 
 
 
