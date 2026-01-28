@@ -100,7 +100,7 @@ app.post("/api/track-order", async (req, res) => {
             m.namespace === "custom" &&
             m.key === "tracking_number"
         );
-        customTrackingNumber = mt.value
+        customTrackingNumber =  mt?.value || null;
       }
     } catch (err) {
       console.warn("⚠ Metafield fetch skipped");
@@ -152,5 +152,6 @@ app.listen(PORT, () => {
   console.log(`🚀 Order Tracking API running on port ${PORT}`);
 
 });
+
 
 
